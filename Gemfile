@@ -8,12 +8,12 @@ gem 'kramdown-parser-gfm'
 gem 'logger'
 gem 'ostruct'
 gem 'puma', '~> 6.0'
-gem 'rack-canonical-host', '1.0.0'
+gem 'rack-canonical-host', '1.3.0'
 gem 'rack-ssl-enforcer'
 gem 'rake', '13.0.3'
 gem 'rerun', '~> 0.14', group: :development
 gem 'rexml'
-gem 'sinatra', '~> 3.0'
+gem 'sinatra', '~> 4.1'
 
 # For bin/update-articles script
 gem 'json'
