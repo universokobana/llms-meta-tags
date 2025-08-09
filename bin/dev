@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# frozen_string_literal: true
+
+bundle exec rerun 'puma -C config/puma.rb'

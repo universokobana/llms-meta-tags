@@ -1,0 +1,80 @@
+name: CI/CD Pipeline
+
+concurrency:
+  group: main-pipeline
+  cancel-in-progress: false
+
+on:
+  push:
+    branches:
+      - main
+      - production
+
+jobs:
+  tests:
+    name: Run Test Suite
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      # - name: Load secrets
+      #   uses: 1password/load-secrets-action@v2
+      #   with:
+      #     export-env: true
+      #   env:
+      #     OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+      - name: Run Rspec test
+        id: rspec-test
+        continue-on-error: true
+        run: bundle exec rake spec
+      - name: Notify Slack
+        uses: ravsamhq/notify-slack-action@v2
+        if: steps.rspec-test.outcome != 'success'
+        with:
+          status: ${{ job.status }}
+          notify_when: 'failure'
+          notification_title: '{workflow} has {status_message}'
+          message_format: '{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>'
+          footer: 'Linked Repo <{repo_url}|{repo}>'
+          # notify_when: "failure"
+          # mention_users: "U0160UUNH8S,U0080UUAA9N"
+          # mention_users_when: "failure,warnings"
+          # mention_groups: "SAZ94GDB8"
+          # mention_groups_when: "failure,warnings"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DEV_WEBHOOK }}
+      - name: Notify failure if rspec test fail, workaround for continue-on-error
+        if: steps.rspec-test.outcome != 'success'
+        run: exit 1
+
+  # deploy-staging:
+  #   needs: tests
+  #   uses: ./.github/workflows/deploy.yml
+  #   if: github.ref == 'refs/heads/main'
+  #   with:
+  #     environment: staging
+  #   secrets:
+  #     OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+  # deploy-sandbox:
+  #   needs: tests
+  #   uses: ./.github/workflows/deploy.yml
+  #   if: github.ref == 'refs/heads/production'
+  #   with:
+  #     environment: sandbox
+  #   secrets:
+  #     OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+
+  # deploy-production:
+  #   needs: tests
+  #   uses: ./.github/workflows/deploy.yml
+  #   if: github.ref == 'refs/heads/production'
+  #   with:
+  #     environment: production
+  #   secrets:
+  #     OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
