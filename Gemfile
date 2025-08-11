@@ -13,7 +13,7 @@ gem 'rack-ssl-enforcer'
 gem 'rake', '13.0.3'
 gem 'rerun', '~> 0.14', group: :development
 gem 'rexml'
-gem 'sinatra', '~> 3.0'
+gem 'sinatra'
 
 # For bin/update-articles script
 gem 'json'
