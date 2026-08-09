@@ -1,0 +1,103 @@
+app/[[...slug]]/page.tsx
+  s_3bed9e021ede8b::t_93c102fe218103 1-37,39-41,43-57,59-63
+  s_3bed9e021ede8b::t_e00500877b7596 38,42
+  s_3bed9e021ede8b::t_662b9bf5bfb13c 58
+lib/bot.ts
+  s_3bed9e021ede8b::t_c2912f4f463d77 1-9
+eslint.config.mjs
+  s_3bed9e021ede8b::t_a68f6228ee111e 4,9-10
+  s_3bed9e021ede8b::t_3985ecaf673c68 1-3,5-8
+vitest.config.mts
+  s_3bed9e021ede8b::t_4e5bd3aa6c56c3 1-15
+package.json
+  s_3bed9e021ede8b::t_982b3440667688 11
+  s_3bed9e021ede8b::t_3a55973911ec27 1-10,12-32,34-42,44-45
+  s_3bed9e021ede8b::t_d724a01ceebb26 33
+  s_3bed9e021ede8b::t_079cd18ce69c46 43
+lib/routing.ts
+  s_3bed9e021ede8b::t_7cc4e005decba9 1-32,39-47,50-54
+  s_3bed9e021ede8b::t_7039a4842e18d4 48-49
+  s_3bed9e021ede8b::t_22502aba54cbe3 33-38
+app/not-found.tsx
+  s_3bed9e021ede8b::t_7e634ad9d90955 1-3
+app/api/raw/[[...path]]/route.ts
+  s_3bed9e021ede8b::t_990553fae668b4 1-41
+.github/workflows/cicd.yml
+  s_3bed9e021ede8b::t_9e0721e361a70e 40
+  s_3bed9e021ede8b::t_69e55704c9b24b 22-23,25-28,35-39,42-44
+  s_3bed9e021ede8b::t_f0a9c53d72be04 47,61-62
+components/copy-button.tsx
+  s_3bed9e021ede8b::t_f578fdcbafe7f1 1-89
+vercel.json
+  s_3bed9e021ede8b::t_68dfe630ceaae2 1-6
+CLAUDE.md
+  s_3bed9e021ede8b::t_3c16f40fb0a711 82
+  s_3bed9e021ede8b::t_db10c4b3a1868f 7,13-14,17,19-21,27,29-30,32-33,38-42,45,52-54,58-63,67-75,79,84-96
+  s_3bed9e021ede8b::t_458b6222ee24a4 76-78
+  s_3bed9e021ede8b::t_6c45e48b898ace 80-81,83
+  s_3bed9e021ede8b::t_2219ce8f87210a 97-99
+  s_3bed9e021ede8b::t_bdd7ac2b5624c9 100-102,104,106
+spec/routing.test.ts
+  s_3bed9e021ede8b::t_d9099426eb4677 1-34,42-47
+  s_3bed9e021ede8b::t_d095d36c84838e 35-41
+.github/dependabot.yml
+  s_3bed9e021ede8b::t_f4087cca90e0b4 8
+spec/application.test.tsx
+  s_3bed9e021ede8b::t_b8743a15f701b5 17,27,35,37-40
+  s_3bed9e021ede8b::t_d4cb166ce1fb95 115-124
+  s_3bed9e021ede8b::t_87ca9d1001523d 50-51,55-56,60
+  s_3bed9e021ede8b::t_57423b02c45480 1-16,18-26,28-34,36,41-49,52-54,57-59,61-114,125-143
+app/layout.tsx
+  s_3bed9e021ede8b::t_59e98cbac94ad1 1-16
+lib/content.ts
+  s_3bed9e021ede8b::t_08f7d59cc149d8 1-35
+next.config.ts
+  s_3bed9e021ede8b::t_96b3d2301c34dc 1,14-15
+  s_3bed9e021ede8b::t_8b9c9e8c863562 2-3,13,16,19-21
+  s_3bed9e021ede8b::t_9a4b1c3d23d8b9 4-12,17
+  s_3bed9e021ede8b::t_5bc40ef1a25941 18
+app/globals.css
+  s_3bed9e021ede8b::t_411095df2dd3b5 1-103
+spec/bot.test.ts
+  s_3bed9e021ede8b::t_f3dbf4e7ac0d7c 1-26
+tsconfig.json
+  s_3bed9e021ede8b::t_180b51542d3039 4-8,18,20-24,26-28,31-40
+  s_3bed9e021ede8b::t_7353d0c8a65d5e 1-3,9-17,19,25,29-30,41
+lib/markdown.ts
+  s_3bed9e021ede8b::t_5ba20d85128918 1-7,9-36,38-48
+  s_3bed9e021ede8b::t_0f0a7ea5e667ea 8
+  s_3bed9e021ede8b::t_6691863447310f 37
+proxy.ts
+  s_3bed9e021ede8b::t_24442e75c4644a 1-27,30-31,33-36,40-46,48-59
+  s_3bed9e021ede8b::t_b36cd7f323742c 37-39,47
+  s_3bed9e021ede8b::t_f621dc23a91088 28-29,32
+spec/markdown.test.ts
+  s_3bed9e021ede8b::t_9041315758b5da 1-31
+.gitignore
+  s_3bed9e021ede8b::t_4add5297c9d9ae 2-8
+  s_3bed9e021ede8b::t_97249913efa5d7 9
+CONTRIBUTING.md
+  s_3bed9e021ede8b::t_a908f68b9f9aca 43
+  s_3bed9e021ede8b::t_e6d9a6ecda86c0 26,28,30-31
+  s_3bed9e021ede8b::t_0fc46ec3320778 44,56,61,66,71,73,75-77
+.nvmrc
+  s_3bed9e021ede8b::t_17c51314d92c77 1
+package-lock.json
+  s_3bed9e021ede8b::t_d8182e358a8834 1-8938
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "cad083ab8f3425423b5498e990b0749ec8fd182c",
+  "prompts": {},
+  "sessions": {
+    "s_3bed9e021ede8b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14669669-19c5-4989-9cd1-6a2b78bd94d0",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Rafael Lima <contato@rafael.adm.br>"
+    }
+  }
+}
