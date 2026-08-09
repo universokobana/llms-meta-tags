@@ -23,11 +23,12 @@ If you find a bug or have a suggestion for improvement:
 4. Write or update tests as needed
 5. Ensure all tests pass:
    ```bash
-   bundle exec rspec
+   npm test
    ```
-6. Check for linting issues:
+6. Check for type and linting issues:
    ```bash
-   bundle exec rubocop
+   npm run typecheck
+   npm run lint
    ```
 7. Commit your changes with a clear message:
    ```bash
@@ -39,8 +40,8 @@ If you find a bug or have a suggestion for improvement:
 
 ### Prerequisites
 
-- Ruby 3.4.4 or higher
-- Bundler
+- Node.js 22 or higher
+- npm
 
 ### Getting Started
 
@@ -52,27 +53,28 @@ If you find a bug or have a suggestion for improvement:
 
 2. Install dependencies:
    ```bash
-   bundle install
+   npm install
    ```
 
 3. Start the development server:
    ```bash
-   ./bin/dev
+   npm run dev
    ```
 
 4. Run tests:
    ```bash
-   bundle exec rspec
+   npm test
    ```
 
 ## Coding Standards
 
-### Ruby Style Guide
+### TypeScript Style Guide
 
-We follow the Ruby community style guide with RuboCop. Before submitting:
+The site is a TypeScript Next.js app. Before submitting:
 
-- Run `bundle exec rubocop` to check for style violations
-- Run `bundle exec rubocop -a` to auto-fix issues where possible
+- Run `npm run typecheck` to check types
+- Run `npm run lint` to check for style violations
+- Run `npm run lint -- --fix` to auto-fix issues where possible
 
 ### Testing
 

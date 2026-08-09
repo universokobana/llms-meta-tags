@@ -19,23 +19,32 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@v1
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          bundler-cache: true
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
       # - name: Load secrets
       #   uses: 1password/load-secrets-action@v2
       #   with:
       #     export-env: true
       #   env:
       #     OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-      - name: Run Rspec test
-        id: rspec-test
+      - name: Lint and typecheck
+        run: |
+          npm run lint
+          npm run typecheck
+      - name: Run test suite
+        id: test-suite
         continue-on-error: true
-        run: bundle exec rake spec
+        run: npm test
+      - name: Build
+        run: npm run build
       - name: Notify Slack
         uses: ravsamhq/notify-slack-action@v2
-        if: steps.rspec-test.outcome != 'success'
+        if: steps.test-suite.outcome != 'success'
         with:
           status: ${{ job.status }}
           notify_when: 'failure'
@@ -49,8 +58,8 @@ jobs:
           # mention_groups_when: "failure,warnings"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DEV_WEBHOOK }}
-      - name: Notify failure if rspec test fail, workaround for continue-on-error
-        if: steps.rspec-test.outcome != 'success'
+      - name: Notify failure if the test suite fails, workaround for continue-on-error
+        if: steps.test-suite.outcome != 'success'
         run: exit 1
 
   # deploy-staging:
